@@ -1,0 +1,122 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<title>我的日历</title>
+<style>
+*{margin:0; padding:0}
+#container
+{
+	width: 360px;
+	height: 600px;
+	background-color: #CCC;
+	margin: 50px auto;
+}
+
+#text
+{
+	clear:both;
+	width: 340px;
+	height: 100px;
+	background-color:#FFF;
+	margin: 10px 10px;
+	
+}
+
+li
+{
+	background-color:#000;
+	list-style:none;
+	width: 100px;
+	height: 100px;
+	margin: 10px 10px;
+	float:left;
+	font: bold 28px "Times New Roman", Times, serif;
+	color: #FFF;
+	text-align:center;
+}
+
+.active
+{
+	background-color:#FFF;
+	list-style:none;
+	width: 100px;
+	height: 100px;
+	margin: 10px 10px;
+	float:left;
+	font: bold 28px "Times New Roman", Times, serif;
+	color: red;
+	text-align:center
+}
+
+#text p, #text h2
+{
+	padding: 10px 10px;
+}
+
+
+</style>
+
+<script>
+window.onload = function()
+{
+	var div = document.getElementById('container');
+	var li = div.getElementsByTagName('li');
+	var text = div.getElementsByTagName('div')[0];
+	var arr = ['1月到了!',
+				'2月到了!',
+				'3月到了!',
+				'4月到了!',
+				'5月到了!',
+				'6月到了!',
+				'7月到了!',
+				'8月到了!',
+				'9月到了!',
+				'10月到了!',
+				'11月到了!',
+				'12月到了!',];
+	for(var index = 0; index < li.length; ++index)
+	{
+		li[index].index = index;
+		li[index].onmouseover = function()
+		{
+			for(var index = 0; index < li.length; ++index)
+			{
+				li[index].className = '';
+				this.className = 'active';
+			}
+			text.innerHTML = '<h2>'+(this.index + 1)+'月活动</h2><p>' + arr[this.index];
+		}
+	}
+	
+}
+	
+
+</script>
+</head>
+
+<body>
+	<div id = "container">
+		<ul>
+			<li class = "active"><h2>1</h2><p>JAN</p></li>
+			<li><h2>2</h2><p>FEB</p></li>
+			<li><h2>3</h2><p>MAR</p></li>
+			<li><h2>4</h2><p>APR</p></li>
+			<li><h2>5</h2><p>MAY</p></li>
+			<li><h2>6</h2><p>JUN</p></li>
+			<li><h2>7</h2><p>JUL</p></li>
+			<li><h2>8</h2><p>AUG</p></li>
+			<li><h2>9</h2><p>SEP</p></li>
+			<li><h2>10</h2><p>OCT</p></li>
+			<li><h2>11</h2><p>NOV</p></li>
+			<li><h2>12</h2><p>DEC</p></li>	
+		</ul>
+		<div id = "text">
+			<h2>一月活动</h2>
+			<p>1月到了!</p>
+		</div>
+
+	</div>
+
+</body>
+</html>
