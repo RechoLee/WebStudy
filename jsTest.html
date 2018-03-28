@@ -1,0 +1,34 @@
+<!Doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script>
+        var a='aa';
+        var b='3.5';
+        alert(parseInt(a));
+        alert(parseFloat(b));
+        var json={
+            "ab":"1",
+            "b":"2",
+            c:"3"
+        }
+        alert(json.b)
+        alert(json.c)
+        for(var i in json)
+        {
+            alert(i.length)//key的长度
+            alert(json[i])//这里只能通过这种方式获取value
+            // alert(json.i)此种方法获取不到value
+            // alert(json['i'])  此种方法获取不到value
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
